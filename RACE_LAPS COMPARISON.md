@@ -53,3 +53,5 @@ plt.xlabel('lap number')
 plt.ylabel('Time Lap(s)')
 plt.grid(True)
 plt.show()
+
+![Grafico Race Laps](Race_laps_graph.png)
