@@ -1,0 +1,55 @@
+"""
+RACE_LAPS COMPARISON
+
+here is reported an example of how download data and create a graph to compare driver's laptimes during a Race
+The user must use:
+fastF1 API to download data
+pandas to create the dataframe
+seaborn and matplotlib to create the plot
+
+ENJOY
+ALESSANDRO ERMONDE LEONE
+"""
+
+
+import fastf1 as ff1
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Enable caching to avoid downloading everything every time.
+ff1.Cache.enable_cache('../cache')
+
+
+# Upload a session (ex. GP Bahrain 2023, Race)
+session = ff1.get_session(2023, 'Bahrain', 'R')
+session.load()
+"""
+#onother way can be to upload the first gp(Bahrain) and the 5th session(Race)
+session = ff1.get_session(2023, 1, 5)
+session.load()
+"""
+
+# Select driver's laps
+laps_ver = session.laps.pick_driver('VER')  # VER = Verstappen
+laps_lec = session.laps.pick_driver('LEC')  # LEC =Leclerc
+
+
+# Create a DataFrame with laptime in seconds
+df = pd.DataFrame({
+    'LapVer': laps_ver['LapNumber'],
+    'TimeVer': laps_ver['LapTime'].dt.total_seconds(), # convert deltatime in seconds
+    'LapLec': laps_lec['LapNumber'],
+    'TimeLec': laps_lec['LapTime'].dt.total_seconds()  # convert deltatime in seconds
+})
+
+# Timelaps plot
+plt.style.use('dark_background') # if the user prefer the white backgoround he/she can just ignore this line
+plt.figure(figsize=(10, 5))
+sns.lineplot(x='LapVer', y='TimeVer', data=df, color='b')
+sns.lineplot(x='LapLec', y='TimeLec', data=df, color='r')
+plt.title('Time Lap - Verstappen and Leclerc (Barhain GP 2023)')
+plt.xlabel('lap number')
+plt.ylabel('Time Lap(s)')
+plt.grid(True)
+plt.show()
