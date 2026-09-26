@@ -54,4 +54,4 @@ plt.ylabel('Time Lap(s)')
 plt.grid(True)
 plt.show()
 
-<img width="1000" height="500" alt="Image" src="https://github.com/user-attachments/assets/f4389164-18ee-4aaf-8e7f-f73b499ec6d9" />
+![Image](https://github.com/user-attachments/assets/f4389164-18ee-4aaf-8e7f-f73b499ec6d9)
