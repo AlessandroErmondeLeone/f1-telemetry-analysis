@@ -51,5 +51,3 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
-https://github.com/AlessandroErmondeLeone/f1-telemetry-analysis/blob/eb49dd247271b027ca1534ea96a5ac05bc9104bf/Race_laps_graph.png
