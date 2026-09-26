@@ -1,6 +1,6 @@
 ```python
 """
-QUALIFYNG LAPTIME COMPARE
+QUALIFYING LAPTIME COMPARISON
 
 here is reported an example of how download data and create a graph to compare driver's best laptime during a qualifyng session
 The user must use:
