@@ -1,3 +1,4 @@
+```python
 """
 QUALIFYNG LAPTIME COMPARE
 
@@ -51,3 +52,5 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+```
+![](Qualifying_laptime.png)
