@@ -54,4 +54,4 @@ plt.ylabel('Time Lap(s)')
 plt.grid(True)
 plt.show()
 
-![Image](https://github.com/user-attachments/assets/f4389164-18ee-4aaf-8e7f-f73b499ec6d9)
+![](Race_laps_graph.png)
